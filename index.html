@@ -389,13 +389,13 @@
           <a href="mailto:raquel.charaba@email.com" class="btn-ghost">Get in Touch</a>
         </div>
       </div>
-     <div class="hero-card">
-    <div class="avatar-circle">
-        <img src="https://i.postimg.cc/ThMTWwds/mypic.png" alt="My picture">
-    </div>
-    <p class="hero-text"></p>
-</div>
-      /* Page background */
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hero Section</title>
+
+<style>
 body {
     background-color: #0f1226;
     display: flex;
@@ -404,7 +404,7 @@ body {
     height: 100vh;
 }
 
-/* Card container */
+/* Card */
 .hero-card {
     width: 300px;
     height: 420px;
@@ -415,16 +415,20 @@ body {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    
-    /* dotted pattern */
+
     background-image: radial-gradient(#4a4e8a 1px, transparent 1px);
     background-size: 20px 20px;
-    
-    /* soft border */
+
     border: 1px solid #3f437a;
+
+    transition: transform 0.3s ease;
 }
 
-/* Avatar circle */
+.hero-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Avatar */
 .avatar-circle {
     width: 180px;
     height: 180px;
@@ -432,13 +436,25 @@ body {
     overflow: hidden;
     border: 6px solid #8fa3a9;
     background-color: #8fa3a9;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Image inside circle */
+.avatar-circle:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Image */
 .avatar-circle img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.avatar-circle:hover img {
+    transform: scale(1.1);
 }
 
 /* Text */
@@ -447,6 +463,20 @@ body {
     font-size: 16px;
     opacity: 0.8;
 }
+</style>
+</head>
+
+<body>
+
+<div class="hero-card">
+    <div class="avatar-circle">
+        <img src="https://i.postimg.cc/ThMTWwds/mypic.png" alt="My picture">
+    </div>
+    <p class="hero-text">add your photo here</p>
+</div>
+
+</body>
+</html>
 </div>
       </div>
     </div>
