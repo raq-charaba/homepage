@@ -170,13 +170,25 @@
     }
 
     .avatar-circle {
-      width: 120px; height: 120px; border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
       background: var(--slate);
       border: 2px solid rgba(161,194,189,0.25);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--serif); font-size: 2.5rem;
-      color: var(--mist); font-weight: 600;
-      position: relative; z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .profile-pic {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
     }
 
     .hero-visual-label { font-size: 0.72rem; color: var(--slate); opacity: 0.55; letter-spacing: 0.06em; position: relative; z-index: 1; }
@@ -390,8 +402,10 @@
         </div>
       </div>
       <div class="hero-visual">
-        <div class="avatar-circle">YN</div>
-        <p class="hero-visual-label">add your photo here</p>
+        <div class="avatar-circle">
+          <img src="https://i.postimg.cc/ThMTWwds/mypic.png" alt="Your Name" class="profile-pic">
+        </div>
+        <p class="hero-visual-label">Your Name</p>
       </div>
     </div>
   </div>
