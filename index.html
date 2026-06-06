@@ -278,8 +278,9 @@
       pointer-events: none;
     }
     .pd-hero-inner {
-      max-width: 960px;
-      margin: 0 auto;
+       width: 92%;
+       max-width: 1400px;
+       margin: 0 auto;
     }
     .pd-back {
       display: inline-flex; align-items: center; gap: 0.5rem;
@@ -320,9 +321,10 @@
 
     /* Body */
     .pd-body {
-      max-width: 960px;
+      width: 92%;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 4rem 2.5rem 6rem;
+      padding: 4rem 0 6rem;
     }
 
     /* Description block */
@@ -333,8 +335,11 @@
     .pd-section-label::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--slate); }
 
     .pd-description {
-      font-size: 1rem; color: var(--slate); line-height: 1.9;
-      margin-bottom: 3rem; max-width: 720px;
+      font-size: 1rem;
+      color: var(--slate);
+      line-height: 1.9;
+      margin-bottom: 3rem;
+      max-width: 1100px;
     }
     .pd-description p { margin-bottom: 1.2rem; }
     .pd-description p:last-child { margin-bottom: 0; }
@@ -364,6 +369,7 @@
       margin-bottom: 4rem;
       position: relative;
       overflow: hidden;
+      width: 100%;
     }
     .pd-exec-summary::before {
       content: '';
@@ -382,12 +388,16 @@
     /* Dashboard embed */
     .pd-embed-wrap {
       background: #fff;
-      border: 1px solid rgba(161,194,189,0.25);
-      border-radius: 24px;
-      overflow: hidden;
-      margin-bottom: 4rem;
-      box-shadow: 0 8px 32px rgba(25,24,59,0.08);
-    }
+  border: 1px solid rgba(161,194,189,0.25);
+  border-radius: 24px;
+  overflow: hidden;
+  margin: 0 auto 4rem auto; /* Centers the card on the page */
+  box-shadow: 0 8px 32px rgba(25,24,59,0.08);
+
+  /* KEY FIX: Automatically restricts width based on your 75vh height */
+  width: 100%;
+  max-width: calc(75vh * 1.777); /* 1.777 is the standard 16:9 ratio factor */
+}
     .pd-embed-header {
       padding: 1.25rem 1.75rem;
       border-bottom: 1px solid rgba(161,194,189,0.2);
@@ -403,7 +413,9 @@
     .pd-embed-container {
       position: relative;
       width: 100%;
-      padding-bottom: 62%;
+  max-width: 1066px; /* Prevents the container from getting wider than the 16:9 report layout */
+  margin: 0 auto;    /* Centers the dashboard inside its white wrapper card */
+  height: 530px;
       background: var(--mist-warm);
     }
     .pd-embed-container iframe {
@@ -553,6 +565,13 @@
         <p class="section-label">Experience</p>
         <h2 class="section-title">Where I've worked.</h2>
         <div class="timeline reveal">
+                  <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-period">April 2026 — Current</p>
+            <h3 class="timeline-role">Generative AI Data Specialist</h3>
+            <p class="timeline-company">Micro1 · Remote</p>
+            <p class="timeline-desc">In this role, I combine business intelligence expertise with generative AI evaluation, assessing model responses against real world reporting and decision support standards. My work focuses on prompt development, response quality review, and training data creation, helping improve the accuracy, consistency, and business relevance of AI generated content across enterprise use cases.</p>
+            </div>
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <p class="timeline-period">August 2024 — November 2025</p>
@@ -698,10 +717,33 @@
           <p>A Power BI dashboard modeling Microsoft Copilot adoption across six departments over a six month period. The project tracks license usage, productivity gains, and governance performance, helping leadership evaluate AI program results and identify areas requiring attention before broader deployment.</p
         </div>
 
-        <!-- Executive summary -->
-        <div class="pd-exec-summary">
-          <p class="pd-section-label">Executive summary</p>
-          <div class="pd-exec-summary-text">
+
+               <!-- 1 ── LIVE DASHBOARD (first thing visitors see) -->
+        <p class="pd-section-label" style="margin-bottom:1.5rem;">Live dashboard</p>
+        <div class="pd-embed-wrap">
+          <div class="pd-embed-header">
+            <div class="pd-embed-dot" style="background:#FF5F57;"></div>
+            <div class="pd-embed-dot" style="background:#FFBD2E;"></div>
+            <div class="pd-embed-dot" style="background:#28C840;"></div>
+            <span class="pd-embed-title">Copilot Readiness & ROI Tracker — Power BI</span>
+          </div>
+          <div class="pd-embed-container">
+            <iframe
+              title="Copilot-Project"
+              src="https://app.powerbi.com/view?r=eyJrIjoiZTQxYjlhMWQtZjE1ZC00NDUxLWEyMzktM2VmYzIzMjM3YTU2IiwidCI6ImUwOTRlZjFjLWFmNWYtNGQ0Ny05N2YzLTkwYmI1OTdjMGYyYyIsImMiOjZ9"
+              frameborder="0"
+              allowFullScreen="true">
+            </iframe>
+          </div>
+        </div>
+
+     <!-- Executive summary -->
+        <p class="pd-section-label" style="margin-bottom:1.5rem;">
+  Executive Summary
+</p>
+
+<div class="pd-exec-summary">
+  <div class="pd-exec-summary-text">
             <p>As of December 2024, Copilot adoption across the organization has reached an average of 56% — with Sales leading at 93% and Operations lagging at 50%. Active licenses are generating an estimated <strong>$159K in cumulative productivity value</strong>, driven primarily by Code Assistance (749 hours saved) and Data Analysis (590 hours saved).</p>
             <p>However, <strong>$15K per month in license spend remains wasted</strong> due to inactive users — concentrated in Operations ($2.7K/mo) and Engineering ($3.0K/mo). Closing this gap through targeted enablement programs represents the highest-leverage near-term opportunity.</p>
             <p>On governance readiness, Sales and Marketing are fully compliant across all five pillars. Operations remains the only department rated <strong>Not Ready</strong>, with DLP Policies and User Training both scoring below 55. Scaling adoption in Operations without first addressing these gaps poses a compliance risk.</p>
@@ -709,20 +751,7 @@
           </div>
         </div>
 
-        <!-- Dashboard embed -->
-        <div class="pd-embed-header">
-    <span class="pd-embed-title">Copilot Readiness & ROI Tracker — Power BI</span>
-</div>
 
-<div class="pd-embed-container">
-    <iframe
-        title="Copilot-Project"
-        src="https://app.powerbi.com/view?r=eyJrIjoiZTQxYjlhMWQtZjE1ZC00NDUxLWEyMzktM2VmYzIzMjM3YTU2IiwidCI6ImUwOTRlZjFjLWFmNWYtNGQ0Ny05N2YzLTkwYmI1OTdjMGYyYyIsImMiOjZ9&pageName=bbb497d8c83ee148d802"
-        frameborder="0"
-        allowfullscreen="true">
-    </iframe>
-</div>
-</div>
 
 </div>
 </div>
