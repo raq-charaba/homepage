@@ -322,8 +322,8 @@
     /* Body */
     .pd-body {
       width: 92%;
-      max-width: 1400px;
-      margin: 0 auto;
+      max-width: calc(75vh * 1.777);
+      margin: 0 auto 1rem auto;
       padding: 4rem 0 6rem;
     }
 
@@ -364,26 +364,27 @@
     /* Executive summary */
     .pd-exec-summary {
       background: var(--navy-deep);
-      border-radius: 24px;
-      padding: 3rem;
-      margin-bottom: 4rem;
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-    }
+  border-radius: 24px;
+  padding: 3rem;
+  margin: 0 auto 4rem auto;       /* Centers the block horizontally */
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: calc(75vh * 1.777); /* Locks width to match the 16:9 dashboard size */
+}
     .pd-exec-summary::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--sage), rgba(161,194,189,0.2));
-    }
-    .pd-exec-summary .pd-section-label { color: var(--sage); }
-    .pd-exec-summary .pd-section-label::before { background: var(--sage); }
-    .pd-exec-summary-text {
-      font-size: 1rem; color: var(--mist); line-height: 1.9; opacity: 0.85;
-    }
-    .pd-exec-summary-text p { margin-bottom: 1.2rem; }
-    .pd-exec-summary-text p:last-child { margin-bottom: 0; }
-    .pd-exec-summary-text strong { color: var(--sage); font-weight: 600; }
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--sage), rgba(161,194,189,0.2));
+}
+.pd-exec-summary .pd-section-label { color: var(--sage); }
+.pd-exec-summary .pd-section-label::before { background: var(--sage); }
+.pd-exec-summary-text {
+  font-size: 1rem; color: var(--mist); line-height: 1.9; opacity: 0.85;
+}
+.pd-exec-summary-text p { margin-bottom: 1.2rem; }
+.pd-exec-summary-text p:last-child { margin-bottom: 0; }
+.pd-exec-summary-text strong { color: var(--sage); font-weight: 600; }
 
     /* Dashboard embed */
     .pd-embed-wrap {
@@ -391,12 +392,10 @@
   border: 1px solid rgba(161,194,189,0.25);
   border-radius: 24px;
   overflow: hidden;
-  margin: 0 auto 4rem auto; /* Centers the card on the page */
+  margin: 0 auto 4rem auto;       /* Centers the block horizontally */
   box-shadow: 0 8px 32px rgba(25,24,59,0.08);
-
-  /* KEY FIX: Automatically restricts width based on your 75vh height */
   width: 100%;
-  max-width: calc(75vh * 1.777); /* 1.777 is the standard 16:9 ratio factor */
+  max-width: calc(75vh * 1.777);
 }
     .pd-embed-header {
       padding: 1.25rem 1.75rem;
