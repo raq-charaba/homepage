@@ -8,10 +8,8 @@
   <meta property="og:title" content="Raquel — BI Portfolio">
   <meta property="og:type" content="website">
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --navy:       #19183B;
       --slate:      #708993;
@@ -24,9 +22,7 @@
       --serif: 'Lora', Georgia, serif;
       --sans:  'DM Sans', sans-serif;
     }
-
     html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-
     body {
       font-family: var(--sans);
       background: var(--mist);
@@ -35,7 +31,6 @@
       font-size: 16px;
       -webkit-font-smoothing: antialiased;
     }
-
     /* ── NAVIGATION ─────────────────────────────── */
     nav {
       position: fixed;
@@ -51,7 +46,6 @@
       justify-content: space-between;
       height: 70px;
     }
-
     .nav-logo {
       font-family: var(--serif);
       font-size: 1.2rem;
@@ -61,7 +55,6 @@
       letter-spacing: -0.02em;
       cursor: pointer;
     }
-
     .nav-links { display: flex; gap: 2.25rem; list-style: none; }
     .nav-links a {
       font-size: 0.75rem; font-weight: 500;
@@ -70,10 +63,8 @@
       opacity: 0.7; transition: opacity 0.3s ease;
     }
     .nav-links a:hover { opacity: 1; }
-
     /* ── MAIN SITE ───────────────────────────────── */
     #main-site { display: block; }
-
     /* HERO */
     .hero-wrap { background: var(--navy-deep); position: relative; overflow: hidden; }
     .hero-wrap::before {
@@ -141,7 +132,6 @@
       font-size: 0.75rem; color: var(--navy); opacity: 0.6; font-weight: 600;
       letter-spacing: 0.05em; text-transform: uppercase; position: relative; z-index: 1;
     }
-
     /* SECTIONS */
     section { padding: 8rem 2.5rem; }
     .section-inner { max-width: 1140px; margin: 0 auto; }
@@ -154,7 +144,6 @@
       font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3.5rem);
       font-weight: 600; line-height: 1.1; margin-bottom: 4rem; color: var(--navy);
     }
-
     /* ABOUT */
     #about { background: #fff; }
     .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: start; }
@@ -169,7 +158,6 @@
     .stat-number { font-family: var(--serif); font-size: 2.5rem; font-weight: 600; color: var(--navy); line-height: 1; margin-bottom: 0.5rem; }
     .stat-number span { color: var(--sage); }
     .stat-label { font-size: 0.85rem; color: var(--slate); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
-
     /* PROJECTS */
     #projects { background: var(--navy-deep); }
     #projects .section-label, #projects .section-title { color: var(--mist); }
@@ -213,7 +201,6 @@
       padding: 0.4rem 1rem; border-radius: 50px;
       font-family: var(--sans);
     }
-
     /* EXPERIENCE */
     #experience { background: var(--mist-warm); }
     .timeline { position: relative; max-width: 800px; }
@@ -223,7 +210,6 @@
     .timeline-period { font-size: 0.75rem; font-weight: 700; color: var(--slate); margin-bottom: 0.5rem; }
     .timeline-role { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--navy); margin-bottom: 0.3rem; }
     .timeline-company { font-size: 0.9rem; color: var(--slate); font-weight: 500; margin-bottom: 1rem; }
-
     /* SKILLS */
     #skills { background: var(--navy-deep); }
     #skills .section-label { color: var(--mist); }
@@ -242,18 +228,15 @@
       border: 1px solid rgba(161,194,189,0.2); font-weight: 500; transition: all 0.2s ease;
     }
     .skill-pill:hover { background: rgba(161,194,189,0.25); border-color: var(--sage); }
-
     /* FOOTER */
     footer { background: var(--navy-deep); color: #fff; padding: 5rem 2.5rem; }
     .footer-inner { max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
     .footer-name { font-family: var(--serif); font-size: 1.5rem; color: var(--sage); margin-bottom: 0.5rem; }
     .social-links a { color: var(--mist); text-decoration: none; margin-left: 2rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; transition: 0.3s; }
     .social-links a:hover { opacity: 1; color: var(--sage); }
-
     /* ANIMATIONS */
     .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-
     /* ── PROJECT DETAIL PAGE ─────────────────────── */
     #project-detail {
       display: none;
@@ -261,7 +244,6 @@
       background: var(--mist);
       padding-top: 70px;
     }
-
     /* Hero band */
     .pd-hero {
       background: var(--navy-deep);
@@ -291,7 +273,6 @@
     }
     .pd-back::before { content: '←'; }
     .pd-back:hover { opacity: 1; gap: 0.8rem; }
-
     .pd-tags { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
     .pd-tag {
       font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
@@ -299,7 +280,6 @@
       border: 1px solid rgba(161,194,189,0.25);
       padding: 0.35rem 0.9rem; border-radius: 50px;
     }
-
     .pd-title {
       font-family: var(--serif);
       font-size: clamp(2rem, 5vw, 3.2rem);
@@ -310,7 +290,6 @@
       font-size: 1.05rem; color: var(--mist); opacity: 0.65;
       font-weight: 300; max-width: 680px; line-height: 1.8;
     }
-
     /* Meta row */
     .pd-meta {
       display: flex; gap: 3rem; margin-top: 2.5rem; flex-wrap: wrap;
@@ -318,7 +297,6 @@
     .pd-meta-item {}
     .pd-meta-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--slate); margin-bottom: 0.3rem; }
     .pd-meta-value { font-size: 0.9rem; color: var(--mist); opacity: 0.8; font-weight: 400; }
-
     /* Body */
     .pd-body {
       width: 92%;
@@ -326,14 +304,12 @@
       margin: 0 auto 1rem auto;
       padding: 4rem 0 6rem;
     }
-
     /* Description block */
     .pd-section-label {
       font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--slate); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;
     }
     .pd-section-label::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--slate); }
-
     .pd-description {
       font-size: 1rem;
       color: var(--slate);
@@ -343,7 +319,6 @@
     }
     .pd-description p { margin-bottom: 1.2rem; }
     .pd-description p:last-child { margin-bottom: 0; }
-
     /* Key features grid */
     .pd-features {
       display: grid;
@@ -360,7 +335,6 @@
     .pd-feature-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
     .pd-feature-title { font-family: var(--serif); font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
     .pd-feature-desc { font-size: 0.85rem; color: var(--slate); line-height: 1.6; }
-
     /* Executive summary */
     .pd-exec-summary {
       background: var(--navy-deep);
@@ -385,7 +359,6 @@
 .pd-exec-summary-text p { margin-bottom: 1.2rem; }
 .pd-exec-summary-text p:last-child { margin-bottom: 0; }
 .pd-exec-summary-text strong { color: var(--sage); font-weight: 600; }
-
     /* Dashboard embed */
     .pd-embed-wrap {
      background: #fff;
@@ -394,7 +367,6 @@
   overflow: hidden;
   margin: 0 auto 4rem auto;
   box-shadow: 0 8px 32px rgba(25,24,59,0.08);
-
   width: 100%;
   max-width: 1140px; /* same width as Executive Summary */
 }
@@ -435,10 +407,8 @@
     .pd-embed-placeholder-icon { font-size: 2.5rem; opacity: 0.3; }
     .pd-embed-placeholder-text { font-size: 0.9rem; color: var(--slate); text-align: center; max-width: 280px; line-height: 1.6; }
     .pd-embed-placeholder-note { font-size: 0.75rem; color: var(--slate); opacity: 0.6; }
-
     /* Nav inside project page */
     .pd-nav-link { display: none; }
-
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .hero { flex-direction: column-reverse; text-align: center; padding-top: 140px; }
@@ -452,7 +422,6 @@
   </style>
 </head>
 <body>
-
   <nav>
     <span class="nav-logo" onclick="showMain()">Raquel Charaba</span>
     <ul class="nav-links" id="nav-links-main">
@@ -462,12 +431,10 @@
       <li><a href="#skills" onclick="showMain()">Skills</a></li>
     </ul>
   </nav>
-
   <!-- ══════════════════════════════════════════════
        MAIN PORTFOLIO SITE
   ══════════════════════════════════════════════ -->
   <div id="main-site">
-
     <div class="hero-wrap">
       <div class="hero">
         <div class="hero-text">
@@ -492,7 +459,6 @@
         </div>
       </div>
     </div>
-
     <section id="about">
       <div class="section-inner">
         <p class="section-label">My Approach</p>
@@ -524,13 +490,11 @@
         </div>
       </div>
     </section>
-
     <section id="projects">
       <div class="section-inner">
         <p class="section-label">Projects</p>
         <h2 class="section-title">Work I'm proud of.</h2>
         <div class="projects-grid">
-
           <!-- PROJECT 1: Copilot ROI Tracker — LIVE -->
           <div class="project-card reveal">
             <span class="project-tag">Power BI · DAX · AI Builder</span>
@@ -538,15 +502,13 @@
             <p class="project-desc">A four-page executive dashboard tracking Microsoft Copilot adoption, productivity ROI, license utilization, and governance compliance across six departments.</p>
             <button class="project-link" onclick="showProject('copilot-roi')">View Project</button>
           </div>
-
-          <!-- PROJECT 2: Coming soon -->
+          <!-- PROJECT 2: M365 Usage & Adoption Health Monitor -->
           <div class="project-card reveal" style="transition-delay:0.1s;">
-            <span class="project-tag">Power BI · AI Builder · Power Automate</span>
-            <h3 class="project-title">Workforce Sentiment & Productivity Pulse</h3>
-            <p class="project-desc">An HR analytics dashboard combining AI Builder sentiment analysis on open-text survey responses with automated alerts when team scores drop below threshold.</p>
-            <span class="coming-soon-badge">Coming soon</span>
+            <span class="project-tag">Power BI · DAX · Microsoft 365</span>
+            <h3 class="project-title">M365 Usage & Adoption Health Monitor</h3>
+            <p class="project-desc">A three-page executive dashboard tracking Microsoft 365 app adoption trends, usage intensity, and department health scores across the full M365 suite.</p>
+            <button class="project-link" onclick="showProject('m365-monitor')">View Project</button>
           </div>
-
           <!-- PROJECT 3: Coming soon -->
           <div class="project-card reveal" style="transition-delay:0.2s;">
             <span class="project-tag">Python · Snowflake</span>
@@ -554,11 +516,9 @@
             <p class="project-desc">Developed a predictive model using Python to identify at-risk customers, reducing churn by 12% over two quarters.</p>
             <span class="coming-soon-badge">Coming soon</span>
           </div>
-
         </div>
       </div>
     </section>
-
     <section id="experience">
       <div class="section-inner">
         <p class="section-label">Experience</p>
@@ -602,7 +562,6 @@
         </div>
       </div>
     </section>
-
     <section id="skills">
       <div class="section-inner">
         <p class="section-label">Skills</p>
@@ -654,7 +613,6 @@
         </div>
       </div>
     </section>
-
     <footer>
       <div class="footer-inner">
         <p class="footer-name">Raquel Charaba</p>
@@ -665,18 +623,13 @@
         </div>
       </div>
     </footer>
-
   </div><!-- /main-site -->
-
-
   <!-- ══════════════════════════════════════════════
        PROJECT DETAIL PAGE
   ══════════════════════════════════════════════ -->
   <div id="project-detail">
-
     <!-- ── COPILOT ROI TRACKER ───────────────────── -->
     <div id="project-copilot-roi">
-
       <div class="pd-hero">
         <div class="pd-hero-inner">
           <button class="pd-back" onclick="showMain()"> &nbsp;Back to Projects</button>
@@ -707,16 +660,12 @@
           </div>
         </div>
       </div>
-
       <div class="pd-body">
-
         <!-- Project description -->
         <p class="pd-section-label">About this project</p>
         <div class="pd-description">
-          <p>A Power BI dashboard modeling Microsoft Copilot adoption across six departments over a six month period. The project tracks license usage, productivity gains, and governance performance, helping leadership evaluate AI program results and identify areas requiring attention before broader deployment.</p
+          <p>A Power BI dashboard modeling Microsoft Copilot adoption across six departments over a six month period. The project tracks license usage, productivity gains, and governance performance, helping leadership evaluate AI program results and identify areas requiring attention before broader deployment.</p>
         </div>
-
-
                <!-- 1 ── LIVE DASHBOARD (first thing visitors see) -->
         <p class="pd-section-label" style="margin-bottom:1.5rem;">Live dashboard</p>
         <div class="pd-embed-wrap">
@@ -730,12 +679,10 @@
             <iframe title="Copilot-Project" src="https://app.powerbi.com/view?r=eyJrIjoiZTQxYjlhMWQtZjE1ZC00NDUxLWEyMzktM2VmYzIzMjM3YTU2IiwidCI6ImUwOTRlZjFjLWFmNWYtNGQ0Ny05N2YzLTkwYmI1OTdjMGYyYyIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
           </div>
         </div>
-
      <!-- Executive summary -->
         <p class="pd-section-label" style="margin-bottom:1.5rem;">
   Executive Summary
 </p>
-
 <div class="pd-exec-summary">
   <div class="pd-exec-summary-text">
             <p>As of December 2024, Copilot adoption across the organization has reached an average of 56% — with Sales leading at 93% and Operations lagging at 50%. Active licenses are generating an estimated <strong>$159K in cumulative productivity value</strong>, driven primarily by Code Assistance (749 hours saved) and Data Analysis (590 hours saved).</p>
@@ -744,55 +691,93 @@
             <p><strong>Recommended actions:</strong> prioritize Operations enablement, set an org-wide 80% adoption target by Q1 2025, and mandate DLP policy completion before expanding Copilot access to at-risk departments.</p>
           </div>
         </div>
-
-
-
-</div>
-</div>
-
       </div><!-- /pd-body -->
     </div><!-- /project-copilot-roi -->
-
+<!-- PROJECT 2: M365 USAGE & ADOPTION HEALTH MONITOR -->
+    <div id="project-m365-monitor">
+      <div class="pd-hero">
+        <div class="pd-hero-inner">
+          <button class="pd-back" onclick="showMain()"> &nbsp;Back to Projects</button>
+          <div class="pd-tags">
+            <span class="pd-tag">Power BI</span>
+            <span class="pd-tag">DAX</span>
+            <span class="pd-tag">Microsoft 365</span>
+            <span class="pd-tag">Power Query</span>
+          </div>
+          <h1 class="pd-title">M365 Usage & Adoption<br>Health Monitor</h1>
+          <p class="pd-subtitle">A three-page executive dashboard tracking Microsoft 365 app adoption trends, usage intensity, and department health scores — showing which teams are thriving and which need enablement support.</p>
+          <div class="pd-meta">
+            <div class="pd-meta-item"><p class="pd-meta-label">Type</p><p class="pd-meta-value">Portfolio Project</p></div>
+            <div class="pd-meta-item"><p class="pd-meta-label">Tools</p><p class="pd-meta-value">Power BI · DAX · Power Query</p></div>
+            <div class="pd-meta-item"><p class="pd-meta-label">Dataset</p><p class="pd-meta-value">Simulated · 6 Departments · 7 Apps · 6 Months</p></div>
+            <div class="pd-meta-item"><p class="pd-meta-label">Pages</p><p class="pd-meta-value">3 — Exec Overview · App Trends · Dept Deep Dive</p></div>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="pd-body">
+        <p class="pd-section-label">About this project</p>
+        <div class="pd-description">
+          <p>This dashboard was created to help organizations understand how Microsoft 365 is being used across the business before introducing AI-powered tools. Using six months of activity data, it provides a comprehensive view of application usage, departmental engagement, and adoption trends. The result is a reporting solution that enables leaders to assess readiness, monitor progress, and make informed decisions around workforce enablement and technology strategy.</p>
+        </div>
+ 
+        <p class="pd-section-label" style="margin-bottom:1.5rem;">Live dashboard</p>
+        <div class="pd-embed-wrap">
+          <div class="pd-embed-header">
+            <div class="pd-embed-dot" style="background:#FF5F57;"></div>
+            <div class="pd-embed-dot" style="background:#FFBD2E;"></div>
+            <div class="pd-embed-dot" style="background:#28C840;"></div>
+            <span class="pd-embed-title">M365 Usage & Adoption Health Monitor — Power BI</span>
+          </div>
+          <div class="pd-embed-container">
+            <iframe
+              title="MS365-Usage"
+              src="https://app.powerbi.com/view?r=eyJrIjoiYTg1Y2Q3OWUtNWUwOC00OTcxLThlNTctZDJmOWE4Y2UxMmY5IiwidCI6ImUwOTRlZjFjLWFmNWYtNGQ0Ny05N2YzLTkwYmI1OTdjMGYyYyIsImMiOjZ9"
+              frameborder="0"
+              allowfullscreen="true">
+            </iframe>
+          </div>
+        </div>
+ 
+        <p class="pd-section-label" style="margin-bottom:1.5rem;">Executive summary</p>
+        <div class="pd-exec-summary">
+          <div class="pd-exec-summary-text">
+            <p>As of December 2024, the organization achieved an M365 Health Score of <strong>74.1</strong>, placing it just below the Healthy benchmark. Outlook (95.8%) and Teams (86.3%) show strong adoption and provide a solid foundation for collaboration, while lower usage of SharePoint (56.8%), Word (53.7%), and PowerPoint (48.9%) highlights opportunities to improve digital workplace maturity.</p>
+            <p>SharePoint emerged as a key success area, growing 12.5% month over month and indicating increasing comfort with cloud-based document management. In contrast, PowerPoint adoption remained below target with minimal growth, limiting opportunities to leverage AI-driven productivity enhancements.</p>
+            <p>Department-level analysis identified <strong>Operations</strong> as the primary area of concern, maintaining a Health Score of 57.5 for six consecutive months. Based on these findings, I recommended targeted SharePoint and PowerPoint adoption initiatives, along with a focused improvement plan for Operations before expanding Copilot licensing across the department.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- /project-m365-monitor -->
+ 
   </div><!-- /project-detail -->
-
-
+ 
+ 
   <script>
-    // ── Intersection observer for .reveal animations ──
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // ── Page switching ────────────────────────────────
+ 
     function showProject(projectId) {
-      // Hide all project sub-pages first
       document.querySelectorAll('#project-detail > div').forEach(el => el.style.display = 'none');
-
-      // Show the right project
       const target = document.getElementById('project-' + projectId);
       if (target) target.style.display = 'block';
-
-      // Switch views
       document.getElementById('main-site').style.display = 'none';
       document.getElementById('project-detail').style.display = 'block';
-
-      // Scroll to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-
+ 
     function showMain() {
       document.getElementById('project-detail').style.display = 'none';
       document.getElementById('main-site').style.display = 'block';
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
-
-    // Handle browser back button
+ 
     window.addEventListener('popstate', () => {
-      if (document.getElementById('project-detail').style.display === 'block') {
-        showMain();
-      }
+      if (document.getElementById('project-detail').style.display === 'block') showMain();
     });
   </script>
-
+ 
 </body>
 </html>
