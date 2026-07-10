@@ -674,7 +674,7 @@
             <span class="pd-embed-title">Copilot Readiness & ROI Tracker — Power BI</span>
           </div>
           <div class="pd-embed-container">
-            <iframe title="Copilot-Project" src="https://app.powerbi.com/view?r=eyJrIjoiZTQxYjlhMWQtZjE1ZC00NDUxLWEyMzktM2VmYzIzMjM3YTU2IiwidCI6ImUwOTRlZjFjLWFmNWYtNGQ0Ny05N2YzLTkwYmI1OTdjMGYyYyIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
+            <iframe title="Copilot-Project" data-src="https://app.powerbi.com/view?r=eyJrIjoiZTQxYjlhMWQtZjE1ZC00NDUxLWEyMzktM2VmYzIzMjM3YTU2IiwidCI6ImUwOTRlZjFjLWFmNWYtNGQ0Ny05N2YzLTkwYmI1OTdjMGYyYyIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
           </div>
         </div>
      <!-- Executive summary -->
@@ -730,7 +730,7 @@
           <div class="pd-embed-container">
             <iframe
               title="MS365-Usage"
-              src="https://app.powerbi.com/view?r=eyJrIjoiYTg1Y2Q3OWUtNWUwOC00OTcxLThlNTctZDJmOWE4Y2UxMmY5IiwidCI6ImUwOTRlZjFjLWFmNWYtNGQ0Ny05N2YzLTkwYmI1OTdjMGYyYyIsImMiOjZ9"
+              data-src="https://app.powerbi.com/view?r=eyJrIjoiYTg1Y2Q3OWUtNWUwOC00OTcxLThlNTctZDJmOWE4Y2UxMmY5IiwidCI6ImUwOTRlZjFjLWFmNWYtNGQ0Ny05N2YzLTkwYmI1OTdjMGYyYyIsImMiOjZ9"
               frameborder="0"
               allowfullscreen="true">
             </iframe>
@@ -787,7 +787,7 @@
           </div>
           <div class="pd-embed-container" style="aspect-ratio:1024 / 620;">
             <iframe title="Workforce-Sentiment"
-            src="https://app.powerbi.com/view?r=eyJrIjoiYTk4NDkwM2UtOTRiYS00ZDZlLWI2MmQtZTA5ZjMwOWI0ZDMyIiwidCI6ImUwOTRlZjFjLWFmNWYtNGQ0Ny05N2YzLTkwYmI1OTdjMGYyYyIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
+            data-src="https://app.powerbi.com/view?r=eyJrIjoiYTk4NDkwM2UtOTRiYS00ZDZlLWI2MmQtZTA5ZjMwOWI0ZDMyIiwidCI6ImUwOTRlZjFjLWFmNWYtNGQ0Ny05N2YzLTkwYmI1OTdjMGYyYyIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
           </div>
         </div>
 
@@ -811,24 +811,59 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
- 
-    function showProject(projectId) {
+
+    function renderProject(projectId) {
       document.querySelectorAll('#project-detail > div').forEach(el => el.style.display = 'none');
       const target = document.getElementById('project-' + projectId);
-      if (target) target.style.display = 'block';
+      if (!target) return;
+
+      target.style.display = 'block';
+
+      // Lazy-load the iframe now, so Power BI measures the real,
+      // final container size instead of a hidden/unsettled one
+      const iframe = target.querySelector('iframe[data-src]');
+      if (iframe && !iframe.src) {
+        iframe.src = iframe.dataset.src;
+      }
+
       document.getElementById('main-site').style.display = 'none';
       document.getElementById('project-detail').style.display = 'block';
       window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Give layout/fonts a beat to settle, then nudge the embed to re-measure
+      requestAnimationFrame(() => {
+        setTimeout(() => window.dispatchEvent(new Event('resize')), 150);
+      });
     }
- 
+
+    function showProject(projectId) {
+      history.pushState({ project: projectId }, '', '#project-' + projectId);
+      renderProject(projectId);
+    }
+
     function showMain() {
       document.getElementById('project-detail').style.display = 'none';
       document.getElementById('main-site').style.display = 'block';
+      if (location.hash.startsWith('#project-')) {
+        history.pushState({}, '', location.pathname + location.search);
+      }
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
- 
+
     window.addEventListener('popstate', () => {
-      if (document.getElementById('project-detail').style.display === 'block') showMain();
+      if (location.hash.startsWith('#project-')) {
+        renderProject(location.hash.replace('#project-', ''));
+      } else {
+        document.getElementById('project-detail').style.display = 'none';
+        document.getElementById('main-site').style.display = 'block';
+      }
+    });
+
+    // Support direct links landing straight on a project page
+    window.addEventListener('DOMContentLoaded', () => {
+      if (location.hash.startsWith('#project-')) {
+        renderProject(location.hash.replace('#project-', ''));
+      }
     });
   </script>
  
